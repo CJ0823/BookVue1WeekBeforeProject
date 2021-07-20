@@ -8,12 +8,12 @@
 </head>
 <body>
     <div id = "app">
-        {{auxiliaryMethod()}}
+        {{person.name}}
         <form v-on:submit = "confirmSubmit">
-            <input type="text" v-model="text" />
+            <input :type="typeOfInput" :value="initialValue">
             <button type="submit">Submit</button>
         </form>
-        {{text}}
+        <a :href="link">홈페이지</a>
     </div>
     <script>
         new Vue({
@@ -23,12 +23,9 @@
                     name : 'charlie',
                     age : '1000'
                 },
-                text : "",
-                bind : {
-                    typeOfInput : "text",
-                    initialValue : "hello",
-                    link : "https://whitepro.tistory.com"
-                }
+                typeOfInput : "text",
+                initialValue : "hello",
+                link : "https://whitepro.tistory.com"
             },
             methods : {
                 thisYear: function(greeting) {
