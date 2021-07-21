@@ -8,7 +8,7 @@
     <title>Document</title>
     <style>
         .red {
-            color : red;
+            color:red;
         }
         .font-size {
             font-size : 50px;
@@ -17,17 +17,24 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
-<div id = "app">
-    <div :style="{color : newColor, 'font-size':newSize}">변경될 텍스트</div>
-</div>
-<script>
-    new Vue({
-        el: '#app',
-        data : {
-            newColor: "green",
-            newSize: "30px"
-        }
-    })
-</script>
+    <div id="app">
+        <div :class="{red : isRed, 'font-size' : isBig}">변경될 텍스트</div>
+        <button @click="changeMessage">button</button>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                isRed : false,
+                isBig : false
+            },
+            methods: {
+                changeMessage() {
+                    this.isRed = !this.isRed;
+                    this.isBig = !this.isBig;
+                }
+            }
+        })
+    </script>
 </body>
 </html>

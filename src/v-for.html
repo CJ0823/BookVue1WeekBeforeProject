@@ -10,7 +10,7 @@
 </head>
 <body>
 <div id = "app">
-    <div v-for="(index, value, key) in book">{{index}}, {{value}}, {{key}}</div>
+    <div v-for="(value, key, index) in book">{{index}}, {{key}}, {{value}}</div>
 </div>
 <script>
     new Vue({

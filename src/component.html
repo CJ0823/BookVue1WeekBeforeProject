@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app1">
+    {{name}} <br>
+    <compo></compo>
+</div>
+<hr>
+<script>
+    const greeting = Vue.component('greeting', {
+        template:
+            `
+            <div> hello </div>
+            `
+    })
+    const compo = Vue.component('compo', {
+        components: {
+            'greeting': greeting
+        },
+        template:
+            `
+        <div>
+        {{name}} <br>
+        <greeting></greeting>
+        <button @click="changeName"> change </button>
+        </div>
+        `,
+        data() {
+            return {
+                name: "charlie_Combo"
+            }
+        },
+        methods: {
+            changeName() {
+                this.name = this.name + " changed";
+            }
+        }
+    });
+    const app1 = new Vue({
+        el: '#app1',
+        data: {
+            name: "charlie"
+        },
+        components: {
+            'compo': compo
+        }
+    })
+</script>
+</body>
+</html>
