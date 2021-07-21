@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id = "app">
+    <div v-show="show === 0">v-show에 의한 표현</div>
+
+    <div v-if="show < 2">show가 2보다 작습니다.</div>
+    <div v-if="show === 2">show가 2입니다.</div>
+    <div v-if="show > 3">show가 3보다 큽니다.</div>
+    <button @click="increaseNumber()"> Increase </button>
+    {{show}}
+
+</div>
+<script>
+    new Vue({
+        el: '#app',
+        data : {
+            show : 0
+        },
+        methods: {
+            increaseNumber() {
+                this.show++;
+            }
+        }
+    })
+</script>
+</body>
+</html>
