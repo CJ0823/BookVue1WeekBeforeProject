@@ -1,19 +1,36 @@
 <template>
-  <div id="greeting">
-    {{ person }}의 홈페이지입니다.
+  <div>
+    <div class="title">{{title}}</div>
+    <button @click="updateTitle">update title</button>
   </div>
 </template>
 
 <script>
 export default {
-  name: "Header",
   data() {
-    return {person: "charlie"}
+    return {
+      // title: "Vue.js study~"
+    }
+  },
+  props : {
+    title:{
+      type : String,
+      required : true,
+      default : "this is default title"
+    }
+  },
+  methods: {
+    updateTitle(){
+      this.title="Title updated!"
+    }
   }
 }
 
 </script>
 
 <style scoped>
-
+.title {
+  font-size: 32px;
+  color : rgb(37, 37, 158);
+}
 </style>

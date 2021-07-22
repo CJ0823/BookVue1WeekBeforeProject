@@ -1,7 +1,6 @@
 <template>
   <div id="app">
-    <Header></Header>
-    <h3>안녕하세요</h3>
+    <div>App.vue에서 표시하는 정보입니다.</div><br>
     <router-link to="/">Home</router-link>
     <router-link to="/about">     About</router-link>
     <router-view></router-view>
@@ -9,13 +8,8 @@
 </template>
 
 <script>
-import Header from '@/components/layout/Header.vue'
-
 export default {
-  name: 'App',
-  components: {
-    Header
-  }
+  name: 'App'
 }
 </script>
 

@@ -8,8 +8,8 @@ Vue.use(VueRouter)
 const router = new VueRouter({
     mode:"history",
     routes: [
-        {path: "/", name: "home", component: Home},
-        {path: "/about", name: "about", component: About}
+        {path: "/", name: "Home", component: Home},
+        {path: "/about", name: "About", component: About}
     ]
 })
 
