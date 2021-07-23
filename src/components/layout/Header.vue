@@ -2,6 +2,12 @@
   <div>
     <div class="title">{{title}}</div>
     <button @click="updateTitle">update title</button>
+    <slot name="forFirst" :fromHeader="title"></slot>
+    <p>first</p>
+    <slot name="forSecond"></slot>
+    <p>second</p>
+    <slot></slot>
+    <p>third</p>
   </div>
 </template>
 
@@ -9,14 +15,7 @@
 export default {
   data() {
     return {
-      // title: "Vue.js study~"
-    }
-  },
-  props : {
-    title:{
-      type : String,
-      required : true,
-      default : "this is default title"
+      title: "Vue.js study~"
     }
   },
   methods: {

@@ -1,11 +1,12 @@
 import Vue from 'vue'
 import App from './App.vue'
+import router from './router.js';
+import mixins from './mixins';
 
 Vue.config.productionTip = false
 
-import router from './router.js';
-
 new Vue({
   render: h => h(App),
-  router
+  router,
+  mixins
 }).$mount('#app')
